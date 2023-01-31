@@ -1,0 +1,60 @@
+<style>
+    /* Add styles for the header */
+    header {
+        background-color: #F5F5F5; /* Add a light gray background color */
+        padding: 10px; /* Add some padding */
+        text-align: center; /* Center the text */
+    }
+    
+    /* Add styles for the header links */
+    header a {
+        color: #0000ff; /* Make the link blue */
+        text-decoration: none; /* Remove underline */
+    }
+    
+    /* Add styles for the main content area */
+    div {
+        text-align: center; /* Center the text */
+    }
+    
+    ol {
+    display: block; /* Change to a block container */
+    text-align: center; /* align the list center */
+    list-style-type: none; /* remove bullet points*/
+    }
+
+    li {
+        font-size: 20px; /* Increase font size */
+        font-weight: bold; /* Make text bold */
+        margin: 10px; /* Add margin around each list item */
+        padding: 10px; /* Add padding to each list item */
+        background-color: #f2f2f2; /* Add background color */
+        border-radius: 10px; /* Add rounded corners */
+        box-shadow: 2px 2px 5px #888888; /* Add a subtle shadow */
+    }
+
+    img {
+        width: 150px; /* Increase image width */
+        height: 150px; /* Increase image height */
+        margin: 10px; /* Add margin around image */
+        border: 2px solid #cccccc; /* Add a border around image */
+        border-radius: 10px; /* Add rounded corners to the image */
+    }
+
+    h1 {
+        font-size: 30px; /* Increase font size */
+        font-weight: bold; /* Make text bold */
+        margin: 10px; /* Add margin around text */
+        padding: 10px; /* Add padding to text */
+        text-align: center; /* align the text center */
+    }
+
+</style>
+
+<ol>
+    <h1><a href="/sandwichranker/">Back to Ranking</a></h1>
+    {% for sandwich in sandwiches %} 
+        <li> {{ sandwich.percentage | floatformat:2 }}% sandwich - {{ sandwich.sandwich_name }}</li>
+        <img src="{{ sandwich.sandwich_image }}" alt="{{ sandwich.sandwich_name }}" width=100 height=100>
+    {% endfor %}
+</ol>
